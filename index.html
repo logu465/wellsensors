@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Well Water Monitoring</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Well Water Monitoring</h1>
+    <p>ESP32 Smart Water Management System</p>
+    <span id="connection">Connecting to Firebase...</span>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>Water Level</h3>
+        <p><span id="waterLevel">--</span>%</p>
+        <div class="bar">
+          <div id="waterBar"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Voltage</h3>
+        <p><span id="voltage">--</span> V</p>
+      </div>
+
+      <div class="card">
+        <h3>Current</h3>
+        <p><span id="current">--</span> A</p>
+      </div>
+
+      <div class="card">
+        <h3>Motor Status</h3>
+        <p id="motorStatus">--</p>
+      </div>
+    </section>
+
+    <section class="alert-box">
+      <h2>System Alert</h2>
+      <p id="alert">Waiting for data...</p>
+      <p>Last updated: <span id="timestamp">--</span></p>
+    </section>
+
+    <section class="history-section">
+      <h2>Previous Readings</h2>
+      <p>Saved sensor readings from Firebase history.</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Water Level (%)</th>
+              <th>Voltage (V)</th>
+              <th>Current (A)</th>
+              <th>Motor</th>
+              <th>Alert</th>
+            </tr>
+          </thead>
+          <tbody id="historyTable">
+            <tr>
+              <td colspan="6">Loading previous readings...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Smart Well Monitoring | ESP32 + Firebase
+  </footer>
+</body>
+</html>
